@@ -133,7 +133,7 @@ The application will open in your default web browser. If it does not open autom
 
 -----
 
-## 🔄 Complete Project Workflow
+## 🔄 Project Workflow
 
 1. **Data Loading & Understanding**
    - Loaded the Online Retail dataset containing 541,909 transactions.
@@ -195,7 +195,7 @@ The application will open in your default web browser. If it does not open autom
 
 -----
 
-## 📊 Exploratory Data Analysis & Key Findings
+## 📊 Exploratory Data Analysis
 
 ### 1. What is the distribution of cancelled invoices?
 - **The dataset contains 9,288 cancelled invoices.**
@@ -224,7 +224,7 @@ The application will open in your default web browser. If it does not open autom
 
 ### 6. Monthly Revenue
 - **Overall monthly revenue steadily increases before peaking in November.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/1.cancelled_invoices.png" width="100%">
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/6.monthly_revenue.png" width="100%">
 
 
 ### 7. Revenue Share by Weekday

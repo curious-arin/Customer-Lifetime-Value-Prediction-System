@@ -46,7 +46,7 @@ Customer Lifetime Value Prediction System
 └── requirements.txt
 ```
 
----
+-----
 
 ## 📈 Dataset 
 
@@ -60,7 +60,7 @@ Customer Lifetime Value Prediction System
 - **Prepared Dataset Columns:** ['Recency', 'Frequency', 'Monetary', 'CLV', 'TotalQuantity', 'UniqueProducts', 'ActiveDays', 'CustomerTenureDays', 'AverageUnitPrice', 'AverageQuantity', 'AverageTransactionValue', 'UniqueCountries']
 - **Prepared Dataset Overview:** The data has 3370 rows and 12 columns
 
----
+-----
 
 ## 🔍 Some Interesting Prepared Feature Overview 
 
@@ -69,7 +69,23 @@ Customer Lifetime Value Prediction System
 - **Monetary:** Total money spent by the customer
 - **CLV:** Total amount the customer spends during the 90-day period.
 
----
+-----
+
+## 🛠️ Tech Stack
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- XGBoost
+- Optuna
+- Joblib
+- Streamlit
+- Jupyter Notebook
+
+-----
 
 ## 🚀 How to Run the Application Locally
 
@@ -115,7 +131,7 @@ streamlit run app.py
 
 The application will open in your default web browser. If it does not open automatically, visit the local URL displayed in your terminal, usually `http://localhost:8501`.
 
----
+-----
 
 ## 🔄 Complete Project Workflow
 
@@ -177,101 +193,95 @@ The application will open in your default web browser. If it does not open autom
     - Saved the trained model and feature-column names using Joblib.
     - Built a Streamlit interface for entering customer information and generating estimated 90-day CLV predictions.
 
----
+-----
 
 ## 📊 Exploratory Data Analysis & Key Findings
 
 ### 1. What is the distribution of cancelled invoices?
+- **The dataset contains 9,288 cancelled invoices.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/1.cancelled_invoices.png" width="100%">
 
-![Cancelled invoices](images/cancelled_invoices.png)
 
-**Insight:** The dataset contains 9,288 cancelled invoices.
+### 2. Total Revenue Overtime
+- **Revenue remains relatively stable until getting a massive spike**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/2.total_revenue_over_time.png" width="100%">
 
-### 2. How has revenue changed over time?
 
-![Total revenue over time](images/total_revenue_over_time.png)
+### 3. Top 10 countries by revenue
+- **United Kingdom generates the highest revenue**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/3.top_10_revenue_countries.png" width="100%">
 
-**Insight:** Revenue remains relatively stable before showing a substantial spike.
 
-### 3. Which countries generate the most revenue?
+### 4. Top 10 products by revenue
+- **The paper craft little birdie generates the highest revenue.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/4.top_products_by_revenue.png" width="100%">
 
-![Top revenue generating countries](images/top_10_revenue_countries.png)
 
-**Insight:** The United Kingdom generates the highest revenue.
+### 5. Top 10 products by quantity sold
+- **PAPER CRAFT , LITTLE BIRDIE and MEDIUM CERAMIC TOP STORAGE JAR are sold the most.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/5.top_products_by_quantity_sold.png" width="100%">
+ 
 
-### 4. Which products generate the highest revenue?
+### 6. Monthly Revenue
+- **Overall monthly revenue steadily increases before peaking in November.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/1.cancelled_invoices.png" width="100%">
 
-![Top revenue generating products](images/top_products_by_revenue.png)
 
-**Insight:** PAPER CRAFT, LITTLE BIRDIE is the highest-revenue product in the analysis.
+### 7. Revenue Share by Weekday
+- **Thursday and Tuesday generate the largest shares of revenue**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/7.revenue_share_by_weekday.png" width="100%">
 
-### 5. Which products sell the most by quantity?
 
-![Top products by quantity sold](images/top_products_by_quantity_sold.png)
+### 8. Items per rder
+- **Order quantities are usually low but feature extreme outliers.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/8.items_per_order.png" width="100%">
 
-**Insight:** PAPER CRAFT, LITTLE BIRDIE and MEDIUM CERAMIC TOP STORAGE JAR are among the top-selling products.
 
-### 6. Which month generates the most revenue?
+### 9. Top 10 Customers by Revenue
+- **Customer with CustomerID (14646.0) is the top customer that generates the highest revenue in the analysis.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/9.customers_by_revenue.png" width="100%">
 
-![Monthly revenue](images/monthly_revenue.png)
 
-**Insight:** Monthly revenue increases overall and peaks in November.
+### 10. Repeat vs One-time Customers
+- **The data shows 65.6% Repeat customers and 34.4% One time customers.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/10.repeat_vs_onetime_customers.png" width="100%">
 
-### 7. Which weekdays perform best?
 
-![Revenue share by weekday](images/revenue_share_by_weekday.png)
+### 11. Correlation Heatmap Before Feature Engineering
+- **The plot shows a strong positive correlation of 0.91 between Quantity and TotalPrice, with other features showing near zero correlation to each other.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/11.correlation_heatmap_before_feature_engineering.png" width="100%">
 
-**Insight:** Tuesday and Thursday generate the largest shares of revenue.
 
-### 8. How many products are typically purchased per order?
+### 12. Skewness Distribution Before Feature Engineering
+* **Data is right skewed, i will later decide what better can be done**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/12.skewed_distributions.png" width="100%">
 
-![Items per order](images/items_per_order.png)
 
-**Insight:** Order quantities are generally low, with some extreme outliers.
+### 13. Distribution of Customer Lifetime Value
+- **The customer lifetime value distribution is highly right-skewed, showing that the majority of customers generate low value, leaving few high value outliers.**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/13.clv_distribution.png" width="100%">
 
-### 9. Who are the highest-revenue customers?
 
-![Customers by revenue](images/customers_by_revenue.png)
+### 14. Correlation Heatmap After Feature Engineering
+- **TotalQuantity has the strongest positive correlation with CLV at 0.76 & Monetary value at 0.65, indicating that higher purchase volume and spending strongly predict customer lifetime value. Because many features showed limited correlation, new features and a target variable was engineered, and the dataset is now prepared for model training**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/14.correlation_heatmap_after_feature_engineering.png" width="100%">
 
-**Insight:** Customer ID `14646` generates the highest revenue in the analysis.
 
-### 10. How many customers are repeat versus one-time buyers?
+### 15. Feature Distribution After Feature Engineering
+- **Data is right skewed, so i will do log transformation after train test split**
+<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/15.distribution_of_features_after_feature_engineering.png" width="100%">
 
-![Repeat versus one-time customers](images/repeat_vs_onetime_customers.png)
+-----
 
-**Insight:** Approximately 65.6% of customers are repeat buyers, while 34.4% are one-time buyers.
+## ⚙️ Machine Learning Models
+- Linear Regression
+- K-Nearest Neighbors
+- Decision Tree
+- Random Forest
+- XGBoost
 
-### 11. How are numerical features correlated?
+-----
 
-![Correlation heatmap](images/correlation_heatmap.png)
-
-**Insight:** Quantity and TotalPrice have a strong positive correlation of approximately 0.91.
-
-### 12. How is Customer Lifetime Value distributed?
-
-![CLV distribution](images/clv_distribution.png)
-
-**Insight:** CLV is highly right-skewed. Most customers generate relatively low future revenue, while a smaller group contributes much higher value.
-
-### 13. Which features are most strongly associated with CLV?
-
-![CLV correlation heatmap](images/correlation_heatmap2.png)
-
-**Insight:** TotalQuantity has the strongest reported positive correlation with CLV at approximately 0.76, followed by Monetary at approximately 0.65.
-
----
-
-## 🧹 Data Preprocessing
-
-- Removed transactions with missing customer identifiers.
-- Identified cancelled invoices and excluded the cancellation indicator from the modeling dataset.
-- Handled missing product descriptions.
-- Created the `TotalPrice` feature.
-- Constructed customer-level RFM and additional behavioral features.
-- Created the future 90-day CLV target using a time-based split.
-- Applied feature transformations and target log transformation.
-
----
 
 ## 📈 Model Training & Evaluation
 
@@ -282,59 +292,41 @@ Five regression models were evaluated, followed by hyperparameter optimization u
 | Metric | Test result |
 |---|---:|
 | MAE | 638.34 |
-| RMSE | See notebook output |
-| R² | See notebook output |
+| RMSE | 6997.01 |
+| R² | 0.24 |
 
 The final model achieved a test MAE of approximately **638.34 CLV units**, meaning its predictions differ from actual future customer spending by around 638 units on average in absolute terms.
 
-The notebook also indicates that the model is overfitting, so its generalization performance requires further improvement.
+The notebook scores indicates that the model is overfitting, so its generalization performance requires further improvement.
 
----
-
-## 🛠️ Tech Stack
-
-- **Programming:** Python
-- **Data Analysis:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Machine Learning:** Scikit-learn, XGBoost
-- **Hyperparameter Optimization:** Optuna
-- **Model Persistence:** Joblib
-- **Application Deployment:** Streamlit
-- **Development Environment:** Jupyter Notebook
-
----
+-----
 
 ## 🚀 Streamlit Application
 
-The trained Random Forest pipeline is saved using Joblib and integrated into a Streamlit application.
+- The trained Random Forest pipeline is saved using Joblib and integrated into a Streamlit application.
+- Users can enter customer-level behavioral and purchasing information to generate a predicted CLV for the next 90 days.
+- The application demonstrates how a machine learning model can turn historical customer data into an estimate that supports customer-value analysis.
 
-Users can enter customer-level behavioral and purchasing information to generate a predicted CLV for the next 90 days.
-
-The application demonstrates how a machine learning model can turn historical customer data into an estimate that supports customer-value analysis.
-
----
+-----
 
 ## 💼 Business Impact
 
-This project demonstrates how e-commerce businesses can use historical purchasing patterns to:
+This project demonstrates how e-commerce businesses can use historical purchase data to:
 
 - Identify high-value customers.
-- Understand repeat purchasing behavior.
-- Estimate future customer revenue.
-- Support customer retention and marketing strategies.
-- Inform customer segmentation and revenue planning.
+- Understand customer purchasing behavior.
+- Predict customer spending over the next 90 days.
+- Support customer retention and targeted marketing.
+- Improve customer segmentation and revenue planning.
 
-These are potential business applications; their actual impact would need to be validated in a production setting.
+-----
 
----
+**⚠️ Note:** This project is still a work in progress, and Streamlit predictions should be treated as experimental due to current overfitting. Limited training data may be a contributing factor. I plan to revisit the project as more data becomes available.
 
 ## 🔮 Future Improvements
 
-- Reduce overfitting and improve generalization.
-- Improve feature engineering and customer behavior indicators.
-- Evaluate performance across customer segments.
-- Analyze large prediction errors and extreme CLV values.
-- Use time-based validation to better reflect future predictions.
-- Add model explainability to understand the drivers of predicted CLV.
-- Monitor model performance as new transactions become available.
-- Improve the Streamlit interface with prediction explanations and customer-value categories.
+- Reduce overfitting and improve model generalization.
+- Improve feature engineering as more customer data becomes available.
+- Investigate large prediction errors and extreme CLV values.
+- Implement MLOps practices for model tracking, monitoring, and retraining.
+- Improve deployment with a more robust and scalable solution.

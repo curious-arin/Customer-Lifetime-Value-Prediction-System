@@ -54,9 +54,6 @@ Customer Lifetime Value Prediction System
 
 - **Original Dataset Columns:** ['InvoiceNo', 'StockCode', 'Description', 'Quantity', 'InvoiceDate', 'UnitPrice', 'CustomerID', 'Country']
 - **Original Dataset Overview:** The data has 541909 rows, 8 columns and it does not have important features like recency, frequency, monetary and clv.
-
-[Prepared Dataset](https://www.kaggle.com/datasets/neuralarin/customer-lifetime-value-dataset)
-
 - **Prepared Dataset Columns:** ['Recency', 'Frequency', 'Monetary', 'CLV', 'TotalQuantity', 'UniqueProducts', 'ActiveDays', 'CustomerTenureDays', 'AverageUnitPrice', 'AverageQuantity', 'AverageTransactionValue', 'UniqueCountries']
 - **Prepared Dataset Overview:** The data has 3370 rows and 12 columns
 
@@ -94,7 +91,7 @@ Follow these steps to run the application on your local system.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System.git
+git clone https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System.git
 
 cd Customer-Lifetime-Value-Prediction-System
 ```
@@ -199,77 +196,77 @@ The application will open in your default web browser. If it does not open autom
 
 ### 1. What is the distribution of cancelled invoices?
 - **The dataset contains 9,288 cancelled invoices.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/1.cancelled_invoices.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/1.cancelled_invoices.png" width="100%">
 
 
 ### 2. Total Revenue Overtime
 - **Revenue remains relatively stable until getting a massive spike**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/2.total_revenue_over_time.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/2.total_revenue_over_time.png" width="100%">
 
 
 ### 3. Top 10 countries by revenue
 - **United Kingdom generates the highest revenue**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/3.top_10_revenue_countries.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/3.top_10_revenue_countries.png" width="100%">
 
 
 ### 4. Top 10 products by revenue
 - **The paper craft little birdie generates the highest revenue.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/4.top_products_by_revenue.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/4.top_products_by_revenue.png" width="100%">
 
 
 ### 5. Top 10 products by quantity sold
 - **PAPER CRAFT , LITTLE BIRDIE and MEDIUM CERAMIC TOP STORAGE JAR are sold the most.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/5.top_products_by_quantity_sold.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/5.top_products_by_quantity_sold.png" width="100%">
  
 
 ### 6. Monthly Revenue
 - **Overall monthly revenue steadily increases before peaking in November.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/6.monthly_revenue.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/6.monthly_revenue.png" width="100%">
 
 
 ### 7. Revenue Share by Weekday
 - **Thursday and Tuesday generate the largest shares of revenue**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/7.revenue_share_by_weekday.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/7.revenue_share_by_weekday.png" width="100%">
 
 
 ### 8. Items per rder
 - **Order quantities are usually low but feature extreme outliers.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/8.items_per_order.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/8.items_per_order.png" width="100%">
 
 
 ### 9. Top 10 Customers by Revenue
 - **Customer with CustomerID (14646.0) is the top customer that generates the highest revenue in the analysis.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/9.customers_by_revenue.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/9.customers_by_revenue.png" width="100%">
 
 
 ### 10. Repeat vs One-time Customers
 - **The data shows 65.6% Repeat customers and 34.4% One time customers.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/10.repeat_vs_onetime_customers.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/10.repeat_vs_onetime_customers.png" width="100%">
 
 
 ### 11. Correlation Heatmap Before Feature Engineering
 - **The plot shows a strong positive correlation of 0.91 between Quantity and TotalPrice, with other features showing near zero correlation to each other.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/11.correlation_heatmap_before_feature_engineering.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/11.correlation_heatmap_before_feature_engineering.png" width="100%">
 
 
 ### 12. Skewness Distribution Before Feature Engineering
 * **Data is right skewed, i will later decide what better can be done**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/12.skewed_distributions.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/12.skewed_distributions.png" width="100%">
 
 
 ### 13. Distribution of Customer Lifetime Value
 - **The customer lifetime value distribution is highly right-skewed, showing that the majority of customers generate low value, leaving few high value outliers.**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/13.clv_distribution.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/13.clv_distribution.png" width="100%">
 
 
 ### 14. Correlation Heatmap After Feature Engineering
 - **TotalQuantity has the strongest positive correlation with CLV at 0.76 & Monetary value at 0.65, indicating that higher purchase volume and spending strongly predict customer lifetime value. Because many features showed limited correlation, new features and a target variable was engineered, and the dataset is now prepared for model training**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/14.correlation_heatmap_after_feature_engineering.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/14.correlation_heatmap_after_feature_engineering.png" width="100%">
 
 
 ### 15. Feature Distribution After Feature Engineering
 - **Data is right skewed, so i will do log transformation after train test split**
-<img src="https://github.com/neuralarin/Customer-Lifetime-Value-Prediction-System/blob/main/images/15.distribution_of_features_after_feature_engineering.png" width="100%">
+<img src="https://github.com/curious-arin/Customer-Lifetime-Value-Prediction-System/blob/main/images/15.distribution_of_features_after_feature_engineering.png" width="100%">
 
 -----
 
